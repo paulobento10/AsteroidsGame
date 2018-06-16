@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Asteroids</title>
+    <script type="text/javascript" src="js/phaser.js"></script>
+    <script type="text/javascript" src="js/howler.min.js"></script>
+    <script type="text/javascript" src="js/Boot.js"></script>
+
+    <script type="text/javascript" src="js/Preloader.js"></script>
+    <script type="text/javascript" src="js/MainMenu.js"></script>
+    <script type="text/javascript" src="js/Game.js"></script>
+
+    <style>
+           body {
+                margin: center;
+                padding: center;
+                top: auto;
+                background-color: rgb(82, 82, 82);
+            }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+    window.onload = function() {
+
+        var game = new Phaser.Game(300, 500,  Phaser.WEBGL, '');
+
+        game.state.add('Boot', BasicGame.Boot);
+        game.state.add('Preloader', BasicGame.Preloader);
+        game.state.add('MainMenu', BasicGame.MainMenu);
+        game.state.add('Game', BasicGame.Game);
+
+        game.state.start('Boot');
+
+    };
+    </script>
+</body>
+
+</html>
